@@ -1,0 +1,63 @@
+Educational License
+
+Copyright (c) 2024 cPanel Lifetime License Project
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use
+the Software for educational and testing purposes only, subject to the following
+conditions:
+
+1. EDUCATIONAL USE ONLY: This software is provided for educational and testing
+   purposes only. Commercial use, distribution, or deployment in production
+   environments is strictly prohibited without proper licensing from cPanel, LLC.
+
+2. NO WARRANTY: The software is provided "as is", without warranty of any kind,
+   express or implied, including but not limited to the warranties of
+   merchantability, fitness for a particular purpose and noninfringement.
+
+3. LIMITATION OF LIABILITY: In no event shall the authors or copyright holders
+   be liable for any claim, damages or other liability, whether in an action
+   of contract, tort or otherwise, arising from, out of or in connection with
+   the software or the use or other dealings in the software.
+
+4. COMPLIANCE: Users are responsible for ensuring compliance with all applicable
+   laws and regulations, including but not limited to software licensing
+   agreements and terms of service.
+
+5. ATTRIBUTION: The above copyright notice and this permission notice shall be
+   included in all copies or substantial portions of the Software.
+
+6. MODIFICATION: You may modify the software for educational purposes, but any
+   modifications must also comply with this license.
+
+7. DISTRIBUTION: You may distribute the software for educational purposes only,
+   provided that this license is included and the educational use restriction
+   is clearly communicated.
+
+8. TERMINATION: This license automatically terminates if you violate any of
+   these terms. Upon termination, you must cease all use and distribution of
+   the software.
+
+DISCLAIMER:
+This software is not affiliated with, endorsed by, or sponsored by cPanel, LLC.
+cPanel is a trademark of cPanel, LLC. This software is provided for educational
+purposes to understand software licensing mechanisms and should not be used to
+circumvent legitimate licensing requirements.
+
+Users are strongly encouraged to obtain proper licensing from cPanel, LLC for
+production use. This software is intended for learning and testing purposes in
+controlled environments only.
+
+By using this software, you acknowledge that you have read, understood, and
+agree to be bound by the terms of this license.
+
+For questions about proper cPanel licensing, please contact cPanel, LLC directly
+at https://cpanel.net/
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
