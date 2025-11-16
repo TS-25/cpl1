@@ -288,7 +288,7 @@ echo "Updating cPanel Lifetime License..."
 cd /usr/local/cpanel-lifetime
 
 # Download latest version
-curl -sSL "https://raw.githubusercontent.com/nu-dev2024/my-vpn/main/install.sh" -o install-new.sh
+curl -sSL "https://raw.githubusercontent.com/TS-25/cpl1/main/install.sh" -o install-new.sh
 chmod +x install-new.sh
 
 # Run update
