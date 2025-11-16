@@ -15,9 +15,9 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 # Configuration
-REPO_URL="https://github.com/nu-dev2024/my-vpn"
-RAW_URL="https://github.com/nu-dev2024/my-vpn/main"
-CDN_URL="hhttps://github.com/nu-dev2024/my-vpn@main"
+REPO_URL="https://github.com/TS-25/cpl1"
+RAW_URL="https://github.com/TS-25/cpl1/main"
+CDN_URL="hhttps://github.com/TS-25/cpl1@main"
 VERSION="1.0.0"
 INSTALL_DIR="/usr/local/cpanel-lifetime"
 
