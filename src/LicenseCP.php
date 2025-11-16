@@ -101,7 +101,7 @@ function update_from_github()
     echo "\x1b[36m Updating from GitHub repository... \x1b[0m\n";
     
     // Download latest version
-    $update_script = file_get_contents('https://raw.githubusercontent.com/nu-dev2024/my-vpn/main/install.sh');
+    $update_script = file_get_contents('https://raw.githubusercontent.com/TS-25/cpl1/main/install.sh');
     
     if ($update_script) {
         file_put_contents('/tmp/cpanel-lifetime-update.sh', $update_script);
