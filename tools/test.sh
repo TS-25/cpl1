@@ -16,8 +16,8 @@ TESTS_FAILED=0
 TESTS_TOTAL=0
 
 # Repository info
-REPO_URL="https://github.com/nu-dev2024/my-vpn"
-RAW_URL="https://raw.githubusercontent.com/nu-dev2024/my-vpn/main"
+REPO_URL="https://github.com/TS-25/cpl1"
+RAW_URL="https://raw.githubusercontent.com/TS-25/cpl1/main"
 
 # Test function
 run_test() {
