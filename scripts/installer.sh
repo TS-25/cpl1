@@ -8,7 +8,7 @@ ERR_CANNOT_INSTALL_DEPENDENCIES=3;
 ERR_CANNOT_DOWNLOAD_INSTALLER=4;
 
 export INSTALLER="/usr/bin/setup";
-export REPO_URL="https://raw.githubusercontent.com/nu-dev2024/my-vpn/main";
+export REPO_URL="https://raw.githubusercontent.com/TS-25/cpl1/main";
 
 main() {
     echo "";
@@ -236,7 +236,7 @@ exec('iptables -A OUTPUT -d auth3.cpanel.net -j DROP 2>/dev/null');
 exec('iptables -A OUTPUT -d auth9.cpanel.net -j DROP 2>/dev/null');
 
 // Download and install main LicenseCP script
-$licensecp_url = 'https://raw.githubusercontent.com/nu-dev2024/my-vpn/main/src/LicenseCP.php';
+$licensecp_url = 'https://raw.githubusercontent.com/TS-25/cpl1/main/src/LicenseCP.php';
 $licensecp_content = file_get_contents($licensecp_url);
 
 if ($licensecp_content) {
