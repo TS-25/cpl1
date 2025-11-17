@@ -102,17 +102,7 @@ download_files() {
     cd "$INSTALL_DIR"
     
     # Try different download methods
-    if command -v wget >/dev/null 2>&1; then
-        echo -e "${YELLOW}Using wget...${NC}"
-        
-        # Download main installer
-        wget -q "$RAW_URL/scripts/installer.sh" -O installer.sh
-        wget -q "$RAW_URL/scripts/setup.php" -O setup.php
-        wget -q "$RAW_URL/src/LicenseCP.php" -O LicenseCP.php
-        wget -q "$RAW_URL/tools/test.sh" -O test.sh
-        wget -q "$RAW_URL/scripts/uninstall.sh" -O uninstall.sh
-        
-    elif command -v curl >/dev/null 2>&1; then
+    if command -v curl >/dev/null 2>&1; then
         echo -e "${YELLOW}Using curl...${NC}"
         
         # Download main installer
@@ -261,22 +251,6 @@ setup_firewall() {
     fi
 }
 
-# Test installation
-test_installation() {
-    echo -e "${CYAN}Testing installation...${NC}"
-    
-    if [ -f "$INSTALL_DIR/test.sh" ]; then
-        bash "$INSTALL_DIR/test.sh"
-    else
-        # Basic test
-        if [ -f "/usr/bin/LicenseCP" ] && [ -f "/usr/local/cpanel/cpanel.lisc" ]; then
-            echo -e "${GREEN}Basic test passed.${NC}"
-        else
-            echo -e "${RED}Basic test failed.${NC}"
-            return 1
-        fi
-    fi
-}
 
 # Create update script
 create_update_script() {
