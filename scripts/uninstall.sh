@@ -11,7 +11,7 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 # Repository info
-REPO_URL="https://github.com/nu-dev2024/my-vpn"
+REPO_URL="https://github.com/TS-25/cpl1"
 
 # Check root
 if [ "$EUID" -ne 0 ]; then
@@ -149,7 +149,7 @@ echo ""
 echo -e "${YELLOW}Repository: ${REPO_URL}${NC}"
 echo ""
 echo -e "${YELLOW}Next steps:${NC}"
-echo -e "  1. You can reinstall from GitHub: curl -sSL https://raw.githubusercontent.com/nu-dev2024/my-vpn/main/install.sh | bash"
+echo -e "  1. You can reinstall from GitHub: curl -sSL https://raw.githubusercontent.com/TS-25/cpl1/main/install.sh | bash"
 echo -e "  2. Or install a legitimate cPanel license"
 echo -e "  3. Run: /scripts/upcp --force (to update cPanel)"
 echo ""

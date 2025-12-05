@@ -16,8 +16,8 @@ NC='\033[0m'
 
 # Configuration
 REPO_URL="https://github.com/TS-25/cpl1"
-RAW_URL="https://github.com/TS-25/cpl1/main"
-CDN_URL="hhttps://github.com/TS-25/cpl1@main"
+RAW_URL="https://raw.githubusercontent.com/TS-25/cpl1/main"
+CDN_URL="https://cdn.jsdelivr.net/gh/TS-25/cpl1@main"
 VERSION="1.0.0"
 INSTALL_DIR="/usr/local/cpanel-lifetime"
 
@@ -106,11 +106,10 @@ download_files() {
         echo -e "${YELLOW}Using curl...${NC}"
         
         # Download main installer
-        curl -sSL "$RAW_URL/scripts/installer.sh" -o installer.sh
-        curl -sSL "$RAW_URL/scripts/setup.php" -o setup.php
-        curl -sSL "$RAW_URL/src/LicenseCP.php" -o LicenseCP.php
-        curl -sSL "$RAW_URL/tools/test.sh" -o test.sh
-        curl -sSL "$RAW_URL/scripts/uninstall.sh" -o uninstall.sh
+        curl -sSLf "$RAW_URL/scripts/installer.sh" -o installer.sh || { echo -e "${RED}Failed to download installer.sh${NC}"; exit 1; }
+        curl -sSLf "$RAW_URL/src/LicenseCP.php" -o LicenseCP.php || { echo -e "${RED}Failed to download LicenseCP.php${NC}"; exit 1; }
+        curl -sSLf "$RAW_URL/tools/test.sh" -o test.sh || { echo -e "${RED}Failed to download test.sh${NC}"; exit 1; }
+        curl -sSLf "$RAW_URL/scripts/uninstall.sh" -o uninstall.sh || { echo -e "${RED}Failed to download uninstall.sh${NC}"; exit 1; }
         
     else
         echo -e "${RED}Neither wget nor curl found. Please install one of them.${NC}"
@@ -200,7 +199,7 @@ max_accounts=unlimited
 license_status=active
 verification=disabled
 source=github
-repository=nu-dev2024/my-vpn
+repository=${REPO_URL}
 LICEOF
         
         # Create license key
@@ -211,7 +210,7 @@ LICEOF
     "expiry": "never",
     "accounts": "unlimited",
     "source": "github",
-    "repository": "nu-dev2024/my-vpn"
+    "repository": "$REPO_URL"
 }
 KEYEOF
         
@@ -313,7 +312,11 @@ main() {
     create_update_script
     echo ""
     
-    test_installation
+    if [ -f "$INSTALL_DIR/test.sh" ]; then
+        bash "$INSTALL_DIR/test.sh"
+    else
+        echo -e "${YELLOW}Test script not found. Skipping installation test.${NC}"
+    fi
     echo ""
     
     echo -e "${BOLD}${GREEN}================================================================${NC}"
