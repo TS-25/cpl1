@@ -210,7 +210,6 @@ LICEOF
     "expiry": "never",
     "accounts": "unlimited",
     "source": "github",
-    "repository": "$REPO_URL"
 }
 KEYEOF
         
