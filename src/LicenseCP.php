@@ -1,8 +1,11 @@
 #!/usr/local/BLBIN/bin/php
 <?php
 // cPanel Lifetime License Manager - GitHub Repository Version
-// Repository: https://github.com/nu-dev2024/my-vpn
+// Repository: https://github.com/TS-25/cpl1
 // Based on original structure but modified for lifetime license
+
+define('REPO_URL', 'https://github.com/TS-25/cpl1');
+define('REPO_NAME', 'TS-25/cpl1');
 
 function clean_firewall()
 {
@@ -32,7 +35,7 @@ function uninstall()
     exec('rm -rf /usr/local/cpanel/cpanel.lisc > /dev/null 2>&1');
     exec('touch /usr/local/cpanel/cpanel.lisc');
     echo "\x1b[36m GitHub License System Removed \x1b[0m\n";
-    echo "\x1b[36m Repository: https://github.com/nu-dev2024/my-vpn \x1b[0m\n";
+    echo "\x1b[36m Repository: " . REPO_URL . " \x1b[0m\n";
     return true;
 }
 
@@ -85,7 +88,7 @@ function check_license_expire()
         'type' => 'lifetime',
         'expiry' => 'never',
         'source' => 'github',
-        'repository' => 'nu-dev2024/my-vpn'
+        'repository' => REPO_NAME
     );
     
     if (!file_exists('/usr/local/CL/.licensekeycp2')) {
@@ -101,7 +104,7 @@ function update_from_github()
     echo "\x1b[36m Updating from GitHub repository... \x1b[0m\n";
     
     // Download latest version
-    $update_script = file_get_contents('https://raw.githubusercontent.com/TS-25/cpl1/main/install.sh');
+    $update_script = file_get_contents('https://raw.githubusercontent.com/' . REPO_NAME . '/main/install.sh');
     
     if ($update_script) {
         file_put_contents('/tmp/cpanel-lifetime-update.sh', $update_script);
@@ -180,7 +183,7 @@ if (isset($argv[1])) {
                 $license_content .= "license_status=active\n";
                 $license_content .= "verification=disabled\n";
                 $license_content .= "source=github\n";
-                $license_content .= "repository=nu-dev2024/my-vpn\n";
+                $license_content .= "repository=" . REPO_NAME . "\n";
                 
                 file_put_contents('/usr/local/cpanel/cpanel.lisc', $license_content);
                 exec('chmod 644 /usr/local/cpanel/cpanel.lisc');
@@ -200,7 +203,7 @@ if (isset($argv[1])) {
 echo "\n";
 echo "\x1b" . '[33m********************** ' . $brand_show . ' **********************' . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[33m| Brand: ' . $brand_show . "\x1b" . '[0m ' . "\n";
-echo "\x1b" . '[33m| Repository: https://github.com/nu-dev2024/my-vpn' . "\x1b" . '[0m ' . "\n";
+echo "\x1b" . '[33m| Repository: ' . REPO_URL . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[33m| cPanel Version: ' . $cp . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[33m| Kernel Version: ' . $kernel . "\x1b" . '[0m ' . "\n";
 
@@ -223,7 +226,7 @@ echo "\n";
 // Check if license is expired (always false for lifetime)
 if (check_license_expire()) {
     echo "\x1b" . '[31m Your License has been expired contact GitHub repository ' . "\x1b" . '[0m ' . "\n";
-    echo "\x1b" . '[31m Repository: https://github.com/nu-dev2024/my-vpn ' . "\x1b" . '[0m ' . "\n";
+    echo "\x1b" . '[31m Repository: ' . REPO_URL . ' ' . "\x1b" . '[0m ' . "\n";
     echo "\n\n\n";
     exit();
 }
@@ -242,14 +245,14 @@ exec('mkdir -p /usr/local/CL > /dev/null 2>&1');
 
 // Create/update lifetime license file
 $license_content = "# cPanel Lifetime License - GitHub Repository Version\n";
-$license_content .= "# Repository: https://github.com/nu-dev2024/my-vpn\n";
+$license_content .= "# Repository: " . REPO_URL . "\n";
 $license_content .= "license_type=lifetime\n";
 $license_content .= "expiry_date=never\n";
 $license_content .= "max_accounts=unlimited\n";
 $license_content .= "license_status=active\n";
 $license_content .= "verification=disabled\n";
 $license_content .= "source=github\n";
-$license_content .= "repository=nu-dev2024/my-vpn\n";
+$license_content .= "repository=" . REPO_NAME . "\n";
 $license_content .= "last_check=" . date('Y-m-d H:i:s') . "\n";
 
 file_put_contents('/usr/local/cpanel/cpanel.lisc', $license_content);
@@ -262,7 +265,7 @@ $license_key = array(
     'accounts' => 'unlimited',
     'verification' => 'disabled',
     'source' => 'github',
-    'repository' => 'nu-dev2024/my-vpn',
+    'repository' => REPO_NAME,
     'last_check' => date('Y-m-d H:i:s'),
     'sig' => base64_encode('github_lifetime_license_active_no_verification')
 );
@@ -288,7 +291,7 @@ exec('chmod +x /usr/local/cpanel/cpkeyclt > /dev/null 2>&1');
 echo "\x1b" . '[32m GitHub Lifetime license has been activated successfully!' . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[32m All cPanel features are now unlocked with no expiration.' . "\x1b" . '[0m ' . "\n";
 echo "\n";
-echo "\x1b" . '[36m Repository: https://github.com/nu-dev2024/my-vpn' . "\x1b" . '[0m ' . "\n";
+echo "\x1b" . '[36m Repository: ' . REPO_URL . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[36m Available commands:' . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[36m   LicenseCP                 - Show license status' . "\x1b" . '[0m ' . "\n";
 echo "\x1b" . '[36m   LicenseCP --update        - Update cPanel' . "\x1b" . '[0m ' . "\n";
