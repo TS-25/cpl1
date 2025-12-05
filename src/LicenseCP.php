@@ -23,6 +23,8 @@ function clean_firewall()
 
 function uninstall()
 {
+    exec('chattr -i /usr/local/cpanel/cpanel.lisc > /dev/null 2>&1');
+    exec('chattr -i /usr/local/CL/.licensekeycp2 > /dev/null 2>&1');
     clean_firewall();
     exec('rm -rf /etc/cron.d/cpanel-lifetime* 1> /dev/null');
     exec('rm -rf /etc/cron.d/cplicensecron 1> /dev/null');
